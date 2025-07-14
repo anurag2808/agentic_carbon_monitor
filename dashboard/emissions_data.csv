@@ -1,0 +1,4 @@
+job_id,team,region,co2_kg,optimized,status
+BERT-101,Retail-AI,us-east-1,1.5,Yes,Completed
+GPT-42,Finance-AI,europe-west-2,2.3,No,Running
+CNN-37,Healthcare-AI,asia-south1,0.9,Yes,Delayed
