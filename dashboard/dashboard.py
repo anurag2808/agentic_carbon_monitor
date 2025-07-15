@@ -21,3 +21,18 @@ st.subheader("Optimization Summary")
 optimized_count = data["optimized"].value_counts()
 st.write("✅ Optimized Jobs:", optimized_count.get("Yes", 0))
 st.write("❌ Non-Optimized Jobs:", optimized_count.get("No", 0))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
