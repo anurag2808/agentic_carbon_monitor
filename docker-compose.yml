@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: carbon-backend
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+    # Uncomment if you want live code mounting
+    # volumes:
+    #   - ./backend:/app
+
+  dashboard:
+    build:
+      context: ./dashboard
+    container_name: carbon-dashboard
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    # Uncomment for live code mounting
+    # volumes:
+    #   - ./dashboard:/app

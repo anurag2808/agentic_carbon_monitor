@@ -14,7 +14,7 @@ HEADERS = {
     "auth-token": API_KEY
 }
 
-# 👇 Mock values for zones you don’t have access to
+# Mock values for zones you don’t have access to
 MOCK_ZONES = {
     "EU-DE": 145,
     "IN-DL": 390,
@@ -23,7 +23,7 @@ MOCK_ZONES = {
     "GB": 160
 }
 
-# ✅ Real + Mock zone handler
+#Real + Mock zone handler
 def get_carbon_intensity(zone: str):
     if zone != "US-CAL-CISO":
         print(f"🔁 Using mock data for zone: {zone}")
@@ -73,6 +73,6 @@ if __name__ == "__main__":
     valid = [r for r in results if r["intensity"] is not None]
     sorted_results = sorted(valid, key=lambda x: x["intensity"])
 
-    print("\n✅ Sorted Carbon Intensity by Region:")
+    print("\nSorted Carbon Intensity by Region:")
     for r in sorted_results:
         print(f"{r['zone']:12} → {r['intensity']} {r['unit']}")
