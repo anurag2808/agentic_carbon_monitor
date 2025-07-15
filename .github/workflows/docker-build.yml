@@ -1,4 +1,4 @@
-name: Build Docker Images
+name: Build and Test
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +17,14 @@ jobs:
     - name: 🐳 Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
-    - name: ⚙️ Build backend image
-      run: docker build -t carbon-backend ./backend
+    - name: 🐍 Install Python and dependencies
+      run: |
+        cd backend
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
 
-    - name: ⚙️ Build dashboard image
-      run: docker build -t carbon-dashboard ./dashboard
+    - name: 🧪 Run tests
+      run: |
+        source backend/venv/bin/activate
+        pytest backend/tests
