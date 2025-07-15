@@ -24,7 +24,8 @@ jobs:
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: 🧪 Run tests
+    - name: 🧪 Run tests with PYTHONPATH
       run: |
-        source backend/venv/bin/activate
+        export PYTHONPATH=$PYTHONPATH:$(pwd)/backend
         pytest backend/tests
+
