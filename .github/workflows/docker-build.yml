@@ -17,15 +17,11 @@ jobs:
     - name: 🐳 Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
-    - name: 🐍 Install Python and dependencies
+    - name: 🐍 Install Python dependencies
       run: |
-        cd backend
-        python -m venv venv
-        source venv/bin/activate
-        pip install -r requirements.txt
+        pip install -r backend/requirements.txt
 
     - name: 🧪 Run tests with PYTHONPATH
       run: |
         export PYTHONPATH=$PYTHONPATH:$(pwd)/backend
         pytest backend/tests
-
