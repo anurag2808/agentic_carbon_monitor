@@ -21,7 +21,10 @@ jobs:
       run: |
         pip install -r backend/requirements.txt
 
-    - name: 🧪 Run tests with PYTHONPATH
+    - name: 🧪 Run tests with PYTHONPATH and API Key
+      env:
+        ELECTRICITYMAP_API_KEY: ${{ secrets.ELECTRICITYMAP_API_KEY }}
       run: |
         export PYTHONPATH=$PYTHONPATH:$(pwd)/backend
         pytest backend/tests
+
