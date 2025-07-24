@@ -1,17 +1,25 @@
 # Use a lightweight Python base image
+# FROM python:3.10-slim
+
+# # Set working directory inside the container
+# WORKDIR /app
+
+# # Copy only necessary files
+# COPY requirements.txt .
+
+# # Install Python dependencies
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# # Copy the rest of your backend code
+# COPY . .
+
+# # Define default command to run agent.py
+# CMD ["python", "agent.py"]
 FROM python:3.10-slim
 
-# Set working directory inside the container
 WORKDIR /app
-
-# Copy only necessary files
 COPY requirements.txt .
-
-# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of your backend code
 COPY . .
 
-# Define default command to run agent.py
-CMD ["python", "agent.py"]
+CMD ["python", "main.py"]
