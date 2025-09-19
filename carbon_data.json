@@ -1,0 +1,1 @@
+[{"zone": "FR", "intensity": 80, "unit": "gCO2eq/kWh"}, {"zone": "EU-DE", "intensity": 145, "unit": "gCO2eq/kWh"}, {"zone": "GB", "intensity": 160, "unit": "gCO2eq/kWh"}, {"zone": "US-CAL-CISO", "intensity": 174, "unit": "gCO2eq/kWh"}, {"zone": "IN-DL", "intensity": 390, "unit": "gCO2eq/kWh"}, {"zone": "SG", "intensity": 510, "unit": "gCO2eq/kWh"}]
